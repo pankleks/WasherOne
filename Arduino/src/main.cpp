@@ -3,7 +3,7 @@
 // v1
 
 #include <Arduino.h>
-#include <Pin.h>
+#include <Pin.h> // <-- all config settings are here
 #include <EventLoop.h>
 #include <Timer.h>
 #include <Motor.h>
