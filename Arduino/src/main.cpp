@@ -65,7 +65,7 @@ void washStart()
   washPhase = 0;
   timer.start();
 
-  taskId = elp.add(new Interval(
+  taskId = elp.interval(
       [](int count)
       {
         switch (washPhase)
@@ -102,7 +102,7 @@ void washStart()
           motor.setTarget(WASH_SLOW_N); // slow down before stop
         }
       },
-      1000, true));
+      1000, true);
 }
 
 // dry
@@ -131,12 +131,12 @@ void dryStart()
   motor.on(true, DRY_N);
   timer.start();
 
-  taskId = elp.add(new Always(
+  taskId = elp.always(
       []()
       {
         if (timer.hasElapsed())
           dryStop();
-      }));
+      });
 }
 
 // cure
@@ -165,12 +165,12 @@ void cureStart()
   motor.on(true, CURE_N);
   timer.start();
 
-  taskId = elp.add(new Always(
+  taskId = elp.always(
       []()
       {
         if (timer.hasElapsed())
           cureStop();
-      }));
+      });
 }
 
 void setup()
@@ -196,17 +196,17 @@ void setup()
   TCNT1 = 0;
   interrupts();
 
-  elp.add(new Interval(
+  elp.interval(
       [](int count)
       { motor.tick(); },
-      100));
+      100);
 
-  elp.add(new Interval(
+  elp.interval(
       [](int count)
       { timer.tick(); },
-      1000));
+      1000);
 
-  elp.add(new PushButton(
+  elp.pushButton(
       []()
       {
         switch (mode)
@@ -221,9 +221,9 @@ void setup()
           break;
         }
       },
-      TIME_PIN));
+      TIME_PIN);
 
-  elp.add(new PushButton(
+  elp.pushButton(
       []()
       {
         switch (mode)
@@ -248,9 +248,9 @@ void setup()
           break;
         }
       },
-      STOP_PIN));
+      STOP_PIN);
 
-  elp.add(new PushButton(
+  elp.pushButton(
       []()
       {
         switch (mode)
@@ -266,7 +266,7 @@ void setup()
           break;
         }
       },
-      MODE_PIN));
+      MODE_PIN);
 
   motor.off();
   washSetup();
