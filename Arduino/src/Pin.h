@@ -14,7 +14,8 @@
 const byte MODE_LED_PIN[] = {A1, A2, A3};
 #endif
 
-#define MAX_T 90
+#define MAX_T 90 * 60 // max time in sec.
+#define MIN_T 2 * 60  // min time in sec.
 
 #define MOTOR_ACC_MS 6000
 

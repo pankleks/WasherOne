@@ -29,14 +29,14 @@ public:
     void increaseTarget()
     {
         if (_target < 60 * 10)
-            _target += 60 * 2;
+            _target += MIN_T;
         else if (_target < 60 * 30)
             _target += 60 * 5;
         else
             _target += 60 * 10;
 
-        if (_target > 60 * MAX_T)
-            _target = 60 * 2;
+        if (_target > MAX_T)
+            _target = MIN_T;
 
         dump(_target);
     }
@@ -46,15 +46,15 @@ public:
         if (_started)
         {
             _left += 60 * 5;
-            if (_left > 60 * MAX_T)
-                _left = 60 * MAX_T;
+            if (_left > MAX_T)
+                _left = MAX_T;
             dump(_left);
         }
     }
 
     void reset(int target)
     {
-        _target = target > 60 * 2 && (target % 60 == 0) ? target : 60 * 2;
+        _target = target > MIN_T && (target % 60 == 0) ? target : MIN_T;
         _started = false;
         dump(_target);
     }
