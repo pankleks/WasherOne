@@ -21,6 +21,11 @@ class Timer
     }
 
 public:
+    int getTarget()
+    {
+        return _target;
+    }
+
     void increaseTarget()
     {
         if (_target < 60 * 10)
@@ -47,9 +52,9 @@ public:
         }
     }
 
-    void reset()
+    void reset(int target)
     {
-        _target = 60 * 2;
+        _target = target > 60 * 2 && (target % 60 == 0) ? target : 60 * 2;
         _started = false;
         dump(_target);
     }

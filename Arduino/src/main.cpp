@@ -7,6 +7,7 @@
 #include <EventLoop.h>
 #include <Timer.h>
 #include <Motor.h>
+#include <EEPROM.h>
 
 EVENT_LOOP;
 
@@ -44,7 +45,9 @@ int washCount;
 void washSetup()
 {
   setMode(10);
-  timer.reset();
+  int t;
+  EEPROM.get(0, t);
+  timer.reset(t);
 }
 
 void washStop()
@@ -58,6 +61,8 @@ void washStop()
 void washStart()
 {
   setMode(11);
+
+  EEPROM.put(0, timer.getTarget());
 
   motor.on(false, WASH_SLOW_N);
   motor.setTarget(WASH_FAST_N);
@@ -109,7 +114,9 @@ void washStart()
 void drySetup()
 {
   setMode(20);
-  timer.reset();
+  int t;
+  EEPROM.get(4, t);
+  timer.reset(t);
 }
 
 void dryStop()
@@ -125,6 +132,8 @@ void dryStop()
 void dryStart()
 {
   setMode(21);
+
+  EEPROM.put(4, timer.getTarget());
 
   setMosfetPower(DRY_FAN_SPEED);
 
@@ -143,7 +152,9 @@ void dryStart()
 void cureSetup()
 {
   setMode(30);
-  timer.reset();
+  int t;
+  EEPROM.get(8, t);
+  timer.reset(t);
 }
 
 void cureStop()
@@ -160,6 +171,8 @@ void cureStart()
 {
   setMode(31);
 
+  EEPROM.put(8, timer.getTarget());
+
   setMosfetPower(CURE_LED_POWER);
 
   motor.on(true, CURE_N);
@@ -175,8 +188,6 @@ void cureStart()
 
 void setup()
 {
-  Serial.begin(9600);
-
   pinMode(STEP_PIN, OUTPUT);
   pinMode(DIR_PIN, OUTPUT);
   pinMode(LOW_STEP_PIN, OUTPUT);

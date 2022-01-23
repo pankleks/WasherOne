@@ -20,10 +20,10 @@ const byte MODE_LED_PIN[] = {A1, A2, A3};
 
 #define WASH_SLOW_N 150   // motor min speed
 #define WASH_FAST_N 30    // motor max speed
-#define WASH_ONE_DIR_S 20 // seconds between direction change
+#define WASH_ONE_DIR_S 30 // seconds between direction change
 
 #define DRY_N 1000       // motor speed at drying
-#define DRY_FAN_SPEED 70 // dry fan speed %
+#define DRY_FAN_SPEED 50 // dry fan speed %
 
 #define CURE_N 1000        // motor speed at curing
 #define CURE_LED_POWER 100 // cure led power %
