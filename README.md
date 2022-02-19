@@ -65,11 +65,29 @@ Should be fairly simple, please see photos in `Assembly` folder.
 Essentially:
 - Assemble all electronics components on the PCB main board
 - Install power socket + on/off switch and RCA plug
-- Install tacktile buttons, LED diodes and LED display (you may wish to use glue to secure them)
+- Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
 - Screw in power regulator (use multimeter to set it for 5V)
 - Screw in PCB
 - Connect all cables (for all 24V connections use ticker cable)
 
-## Ikea 365+
+## Part list
 
-https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
+### Electronics
+
+- Arduino Nano
+- A4988 stepper driver
+- NEMA17 motor
+- 2.5 (or 2.1) / 5.5 DC power socket (depending on your PSU)
+- 24V PSU
+- DC On/Off switch
+- IRF520 power mostfet transistor
+- 3 x 3mm LED dioses
+- 4 digit 7 segment LED display with TM1637 controller
+- 100 uF 24V+ capacitor
+- 1k ohm resistor
+- 3 x 220 ohm resistors (for LED's)
+- 1 x feemale and 2 x male RCA connectors
+
+### Ikea
+- Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
+- Lock cover: https://www.ikea.com/us/en/p/ikea-365-lid-large-rectangular-plastic-30393063/
