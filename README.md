@@ -10,6 +10,8 @@ It is designed with:
 
 ![](https://github.com/pankleks/WasherOne/blob/main/Assembly/washer_one.jpg)
 
+https://www.youtube.com/watch?v=Rgxfg9vZFL4&t
+
 ## How does it work?
 
 There are 3 buttons (from left)
