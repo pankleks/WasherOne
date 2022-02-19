@@ -70,7 +70,7 @@ I'm sorry but I don't have time to write detailed step by step instruction. Howe
 Essentially:
 - Upload code to the Arduino
 - Assemble all electronics components on the PCB main board
-- Install power socket + on/off switch and RCA plug
+- Install power socket + on/off switch and RCA plug (you should glue RCA plug into the box as it's fairly loose)
 - Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
 - Screw in step-down converter (IMPORTANT -> use multimeter to set it for 5V)
 - Screw in PCB
