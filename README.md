@@ -1,6 +1,6 @@
 # WasherOne
 
-Wash, Dry and Cure station for resin prints.
+DIY Wash, Dry and Cure station for resin prints.
 It is designed with:
 - 3D printed parts
 - Ikea 365+ food storage (60393066)
