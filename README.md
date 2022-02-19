@@ -2,7 +2,7 @@
 
 Wash, Dry and Cure station for resin prints.
 It is designed with:
-- printed parts
+- 3D printed parts
 - Ikea 365+ food storage (60393066)
 - Arduino Nano
 
