@@ -50,6 +50,7 @@ All should fit to 180x180 bed (Prusa Mini)
 - Wash fan arm (1 body) -> arm for drying fan
 
 > Tolerances are quie tight -> use included step files to modify if needed.
+> All files are in 3MF format - some contains multiple bodies -> print them separatelly
 
 ## Electronics
 
