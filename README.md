@@ -62,16 +62,16 @@ Schematic and Gerber files are avaiable in `Electronics` folder.
 
 ## Assembly
 
-Should be fairly simple, please see photos in `Assembly` folder.
+I'm sorry but I don't have time to write detailed step by step instruciton. However assembly should be fairly simple, please use photos in `Assembly` folder to guide you.
 
 Essentially:
 - Upload code to the Arduino
 - Assemble all electronics components on the PCB main board
 - Install power socket + on/off switch and RCA plug
 - Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
-- Screw in power regulator (use multimeter to set it for 5V)
+- Screw in step-down converter (IMPORTANT -> use multimeter to set it for 5V)
 - Screw in PCB
-- Connect all cables (for all 24V connections use ticker cable
+- Connect all cables (for all 24V connections use ticker wires)
 
 ## Arduino code
 
@@ -83,13 +83,11 @@ All parameters are defined in `Pin.h` file, by default all pins are compatible w
 Use comments in the code to fine-tune all the parameters such as times, accelerations and speeds.
 The default values works well for me, but may not for you.
 
-> For washing - if you notice skipping rotor (inside container) please regulate distance between motor plate and rotor plate. It may varry depends on your motor shaft or magnet strength.
+> For washing - if you notice skipping rotor (inside container) please regulate distance between motor plate and rotor plate. It may varry depends on your motor shaft length or magnet strength.
 
 > A4988 should be equipped with heat-sink. Motor does not require much power. Use A4988 potentiometer to limit current so it's not overhiting.
 
 ## Part list
-
-### Electronics
 
 - Arduino Nano
 - A4988 stepper driver
@@ -99,6 +97,7 @@ The default values works well for me, but may not for you.
 - DC On/Off switch
 - IRF520 power mostfet transistor
 - 6-8 x PM2E-1LLS (or similar) UV LED (wave length 390-410nm, 1W)
+- LM2596 step-down converter
 - 3 x 3mm LED dioses
 - 4 digit 7 segment LED display with TM1637 controller
 - 100 uF 24V+ electrolytic capacitor
@@ -113,6 +112,5 @@ The default values works well for me, but may not for you.
 
 > UV LED resistors resistance should be calculated based on Ohm law depending on LED parameters. Pay attention to proper power capabilities, use multiple in parralel if needed.
 
-### Ikea
 - Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
 - Lock cover: https://www.ikea.com/us/en/p/ikea-365-lid-large-rectangular-plastic-30393063/
