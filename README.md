@@ -72,6 +72,7 @@ Essentially:
 - Screw in step-down converter (IMPORTANT -> use multimeter to set it for 5V)
 - Screw in PCB
 - Connect all cables (for all 24V connections use ticker wires)
+- Install all magnets in the plates and rotor (pay attention so the magnets attract each other, you may also wish to glue in the magnets) 
 
 ## Arduino code
 
