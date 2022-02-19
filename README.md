@@ -34,7 +34,7 @@ Install UV LED arm. Select cure mode -> set time -> start.
 
 You should print all components on FDM printer.
 
-I used 0.2mm and no support for all parts.
+I used 0.2mm, PLA and no support for all parts.
 
 Use brim for larger box parts.
 
@@ -65,6 +65,7 @@ Schematic and Gerber files are avaiable in `Electronics` folder.
 Should be fairly simple, please see photos in `Assembly` folder.
 
 Essentially:
+- Upload code to the Arduino
 - Assemble all electronics components on the PCB main board
 - Install power socket + on/off switch and RCA plug
 - Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
@@ -93,6 +94,7 @@ Essentially:
 - 1 x feemale and 2 x male RCA connectors
 - 4 x 20x10x2 neodymium magnets
 - 2 x 10x2 (circle) neodymium magnet
+- 608 2RS bearing
 
 > UV LED resistors should specification should be calculated based on Ohm law, pay attention to proper power capabilities, use multiple in parralel if needed.
 
