@@ -17,7 +17,7 @@ There are 3 buttons (from left)
 
 ### Washing
 
-Put Ikea container with the part on top of the box. Select wash mode -> set time -> start.
+Put Ikea container with the resin part on top of the box. Select wash mode -> set time -> start.
 Washing will reverse direction every 30 seconds.
 
 ### Drying
@@ -28,7 +28,7 @@ Install fan arm. Install plate. Select dry mode -> set time -> start.
 
 Install UV LED arm. Install plate. Select cure mode -> set time -> start.
 
-> IMPORTANT: UV LED light might be harmfull for your eyes. Do not look directly into UV light. Best use some kind of cover (for example from your resin printer).
+> IMPORTANT: UV LED light is harmfull for your eyes. Do not look directly into the UV light. Best use some kind of cover (for example from your resin printer).
 
 ## Printed parts
 
@@ -71,19 +71,21 @@ Essentially:
 - Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
 - Screw in power regulator (use multimeter to set it for 5V)
 - Screw in PCB
-- Connect all cables (for all 24V connections use ticker cable)
+- Connect all cables (for all 24V connections use ticker cable
 
 ## Arduino code
 
 Code is available in `Arduino` folder. You should use platform.io to build and upload it.
 All parameters are defined in `Pin.h` file, by default all pins are compatible with PCB I designed.
 
-### Fine tunning
+## Fine tunning
 
 Use comments in the code to fine-tune all the parameters such as times, accelerations and speeds.
 The default values works well for me, but may not for you.
 
 > For washing - if you notice skipping rotor (inside container) please regulate distance between motor plate and rotor plate. It may varry depends on your motor shaft or magnet strength.
+
+> A4988 should be equipped with heat-sink. Motor does not require much power. Use A4988 potentiometer to limit current so it's not overhiting.
 
 ## Part list
 
