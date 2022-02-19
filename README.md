@@ -119,6 +119,6 @@ The default values works well for me, but may not for you.
 - Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
 - Lock cover: https://www.ikea.com/us/en/p/ikea-365-lid-large-rectangular-plastic-30393063/
 
-# Closing words
+# Disclaimer
 
 Please note that I'm not certified electrician. There might be errors in design and your own mistakes during assembly. Please use at your own risk and never leave machine unattended.
