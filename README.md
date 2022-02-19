@@ -3,7 +3,7 @@
 DIY Wash, Dry and Cure station for resin prints.
 It is designed with:
 - 3D printed parts
-- Ikea 365+ food storage (60393066)
+- Ikea 365+ food container
 - Arduino Nano
 
 > All components (excluding printed parts) should cost between 30-40$
