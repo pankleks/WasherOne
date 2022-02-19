@@ -22,11 +22,11 @@ Washing will reverse direction every 30 seconds.
 
 ### Drying
 
-Install fan arm. Select dry mode -> set time -> start.
+Install fan arm. Install plate. Select dry mode -> set time -> start.
 
 ### Curing
 
-Install UV LED arm. Select cure mode -> set time -> start.
+Install UV LED arm. Install plate. Select cure mode -> set time -> start.
 
 > IMPORTANT: UV LED light might be harmfull for your eyes. Do not look directly into UV light. Best use some kind of cover (for example from your resin printer).
 
@@ -73,6 +73,18 @@ Essentially:
 - Screw in PCB
 - Connect all cables (for all 24V connections use ticker cable)
 
+## Arduino code
+
+Code is available in `Arduino` folder. You should use platform.io to build and upload it.
+All parameters are defined in `Pin.h` file, by default all pins are compatible with PCB I designed.
+
+### Fine tunning
+
+Use comments in the code to fine-tune all the parameters such as times, accelerations and speeds.
+The default values works well for me, but may not for you.
+
+> For washing - if you notice skipping rotor (inside container) please regulate distance between motor plate and rotor plate. It may varry depends on your motor shaft or magnet strength.
+
 ## Part list
 
 ### Electronics
@@ -87,7 +99,7 @@ Essentially:
 - 6-8 x PM2E-1LLS (or similar) UV LED (wave length 390-410nm, 1W)
 - 3 x 3mm LED dioses
 - 4 digit 7 segment LED display with TM1637 controller
-- 100 uF 24V+ capacitor
+- 100 uF 24V+ electrolytic capacitor
 - 1k ohm resistor
 - 3 x 220 ohm resistors (for LED's)
 - 3 x 150 ohm 5W ceramic resistors (should be connected in parralel)
@@ -95,8 +107,9 @@ Essentially:
 - 4 x 20x10x2 neodymium magnets
 - 2 x 10x2 (circle) neodymium magnet
 - 608 2RS bearing
+- Wires
 
-> UV LED resistors should specification should be calculated based on Ohm law, pay attention to proper power capabilities, use multiple in parralel if needed.
+> UV LED resistors resistance should be calculated based on Ohm law depending on LED parameters. Pay attention to proper power capabilities, use multiple in parralel if needed.
 
 ### Ikea
 - Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
