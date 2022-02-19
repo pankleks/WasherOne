@@ -4,12 +4,12 @@
 class Motor
 {
     int _target;
-    int _delta;
+    float _delta;
     int _accT; // in ms
     bool _dir = false;
 
 public:
-    int current;
+    float current;
     bool atTarget;
 
     Motor(int accT)
@@ -20,8 +20,8 @@ public:
     void setTarget(int n)
     {
         _target = n;
-        _delta = (float)100 / _accT * abs(_target - current);
-        atTarget = false;
+        _delta = (float)100 / _accT * abs(_target - current);        
+        atTarget = false;        
     }
 
     // 100ms
@@ -48,7 +48,9 @@ public:
         _dir = false;
         digitalWrite(ENABLE_PIN, false);
         digitalWrite(DIR_PIN, _dir);
-        digitalWrite(LOW_STEP_PIN, lowStep);        
+        digitalWrite(STEP_MODE_PIN[0], true);        
+        digitalWrite(STEP_MODE_PIN[1], lowStep);        
+        digitalWrite(STEP_MODE_PIN[2], lowStep);       
 
         current = _target = target;
         atTarget = true;   

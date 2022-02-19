@@ -1,9 +1,9 @@
 // author: pankleks
 // https://github.com/pankleks
-// v1
+// v1.1
 
 #include <Arduino.h>
-#include <Pin.h> // <-- all config settings are here
+#include <Pin.h>
 #include <EventLoop.h>
 #include <Timer.h>
 #include <Motor.h>
@@ -28,8 +28,8 @@ void setMode(int v)
 
 ISR(TIMER1_COMPA_vect)
 {
-  PORTD |= (1 << STEP_PIN);  // high
-  PORTD &= ~(1 << STEP_PIN); // low
+  STEP_PORT |= (1 << STEP_PORT_BIT);  // high
+  STEP_PORT &= ~(1 << STEP_PORT_BIT); // low
   OCR1A = motor.current;
 }
 
@@ -63,6 +63,7 @@ void washStart()
   setMode(11);
 
   EEPROM.put(0, timer.getTarget());
+  setMosfetPower(0);
 
   motor.on(false, WASH_SLOW_N);
   motor.setTarget(WASH_FAST_N);
@@ -70,7 +71,7 @@ void washStart()
   washPhase = 0;
   timer.start();
 
-  taskId = elp.interval(
+  taskId = elp.add(new Interval(
       [](int count)
       {
         switch (washPhase)
@@ -107,7 +108,7 @@ void washStart()
           motor.setTarget(WASH_SLOW_N); // slow down before stop
         }
       },
-      1000, true);
+      1000, true));
 }
 
 // dry
@@ -134,18 +135,17 @@ void dryStart()
   setMode(21);
 
   EEPROM.put(4, timer.getTarget());
-
   setMosfetPower(DRY_FAN_SPEED);
 
   motor.on(true, DRY_N);
   timer.start();
 
-  taskId = elp.always(
+  taskId = elp.add(new Always(
       []()
       {
         if (timer.hasElapsed())
           dryStop();
-      });
+      }));
 }
 
 // cure
@@ -172,28 +172,29 @@ void cureStart()
   setMode(31);
 
   EEPROM.put(8, timer.getTarget());
-
   setMosfetPower(CURE_LED_POWER);
 
   motor.on(true, CURE_N);
   timer.start();
 
-  taskId = elp.always(
+  taskId = elp.add(new Always(
       []()
       {
         if (timer.hasElapsed())
           cureStop();
-      });
+      }));
 }
 
 void setup()
 {
+  // Serial.begin(9600);
+
   pinMode(STEP_PIN, OUTPUT);
   pinMode(DIR_PIN, OUTPUT);
-  pinMode(LOW_STEP_PIN, OUTPUT);
-  pinMode(TIME_PIN, INPUT_PULLUP);
-  pinMode(STOP_PIN, INPUT_PULLUP);
-  pinMode(MODE_PIN, INPUT_PULLUP);
+  for (int i = 0; i < 3; i++)
+    pinMode(STEP_MODE_PIN[i], OUTPUT);
+  for (int i = 0; i < 3; i++)
+    pinMode(MODE_LED_PIN[i], OUTPUT);
   pinMode(MOSFET_PIN, OUTPUT);
 
   display.setBrightness(6);
@@ -207,17 +208,35 @@ void setup()
   TCNT1 = 0;
   interrupts();
 
-  elp.interval(
+  elp.add(new Interval(
       [](int count)
       { motor.tick(); },
-      100);
+      100));
 
-  elp.interval(
+  elp.add(new Interval(
       [](int count)
       { timer.tick(); },
-      1000);
+      1000));
 
-  elp.pushButton(
+  elp.add(new PushButton(
+      []()
+      {
+        switch (mode)
+        {
+        case 10:
+          drySetup();
+          break;
+        case 20:
+          cureSetup();
+          break;
+        case 30:
+          washSetup();
+          break;
+        }
+      },
+      MODE_BUTTON_PIN));
+
+  elp.add(new PushButton(
       []()
       {
         switch (mode)
@@ -232,9 +251,9 @@ void setup()
           break;
         }
       },
-      TIME_PIN);
+      TIME_BUTTON_PIN));
 
-  elp.pushButton(
+  elp.add(new PushButton(
       []()
       {
         switch (mode)
@@ -259,25 +278,7 @@ void setup()
           break;
         }
       },
-      STOP_PIN);
-
-  elp.pushButton(
-      []()
-      {
-        switch (mode)
-        {
-        case 10:
-          drySetup();
-          break;
-        case 20:
-          cureSetup();
-          break;
-        case 30:
-          washSetup();
-          break;
-        }
-      },
-      MODE_PIN);
+      STOP_BUTTON_PIN));
 
   motor.off();
   washSetup();
