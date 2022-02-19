@@ -6,6 +6,8 @@ It is designed with:
 - Ikea 365+ food storage (60393066)
 - Arduino Nano
 
+> All components (excluding printed parts) should cost between 30-40$
+
 ## How does it work?
 
 There are 3 buttons (from left)
@@ -81,12 +83,18 @@ Essentially:
 - 24V PSU
 - DC On/Off switch
 - IRF520 power mostfet transistor
+- 6-8 x PM2E-1LLS (or similar) UV LED (wave length 390-410nm, 1W)
 - 3 x 3mm LED dioses
 - 4 digit 7 segment LED display with TM1637 controller
 - 100 uF 24V+ capacitor
 - 1k ohm resistor
 - 3 x 220 ohm resistors (for LED's)
+- 3 x 150 ohm 5W ceramic resistors (should be connected in parralel)
 - 1 x feemale and 2 x male RCA connectors
+- 4 x 20x10x2 neodymium magnets
+- 2 x 10x2 (circle) neodymium magnet
+
+> UV LED resistors should specification should be calculated based on Ohm law, pay attention to proper power capabilities, use multiple in parralel if needed.
 
 ### Ikea
 - Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
