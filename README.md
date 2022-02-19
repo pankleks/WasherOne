@@ -97,7 +97,7 @@ The default values works well for me, but may not for you.
 - A4988 stepper driver
 - NEMA17 motor
 - 2.5 (or 2.1) / 5.5 DC power socket (depending on your PSU)
-- 24V PSU (~2-3 Amps)
+- 24V PSU (~2-3 Amps) -> brick power supply
 - DC On/Off switch
 - IRF520 power mostfet transistor
 - 6-8 x PM2E-1LLS (or similar) UV LED (wave length 390-410nm, 1W)
