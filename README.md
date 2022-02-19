@@ -112,6 +112,7 @@ The default values work well for me, but may not for you.
 - 4 x 20x10x2 neodymium magnets
 - 2 x 10x2 (circle) neodymium magnet
 - 608 2RS bearing
+- 80x80 24V Fan
 - Wires
 
 > UV LED resistors resistance should be calculated based on Ohm law depending on LED parameters. Pay attention to proper power capabilities, use multiple in parallel if needed.
