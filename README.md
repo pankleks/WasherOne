@@ -94,7 +94,7 @@ The default values work well for me, but may not for you.
 ## Part list
 
 - Arduino Nano
-- A4988 stepper driver
+- A4988 stepper driver (one is required, but they may damage easily during testing, so best to equip yourself with 2-3)
 - NEMA17 motor
 - 2.5 (or 2.1) / 5.5 DC power socket (depending on your PSU)
 - 24V PSU (~2-3 Amps) -> brick power supply
@@ -119,6 +119,9 @@ The default values work well for me, but may not for you.
 
 - Food container: https://www.ikea.com/us/en/p/ikea-365-food-container-rectangular-plastic-60393066/
 - Lock cover: https://www.ikea.com/us/en/p/ikea-365-lid-large-rectangular-plastic-30393063/
+
+# Modifications
+
 
 # Disclaimer
 
