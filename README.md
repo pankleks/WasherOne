@@ -38,13 +38,13 @@ Install UV LED arm. Install plate. Select cure mode -> set time -> start.
 
 You should print all components on FDM printer.
 
-I used 0.2mm, PLA and no support for all parts.
+I used 0.2mm, PLA and no support for all parts except box top cover.
 
 Use brim for larger box parts.
 
 All should fit to 180x180 bed (Prusa Mini)
 
-- Wash top (2 bodies) -> main box and top box plate
+- Wash top (2 bodies) -> main box and top box cover (top box cover requires supports)
 - Wash grid (1 body) -> goes into Ikea container
 - Wash rotor (1 body) -> mounted to Wash grid with 608 bearing
 - Wash motor plate (2 bodies) -> mounted to the stepper motor + plate for drying and curing
