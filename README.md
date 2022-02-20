@@ -8,7 +8,7 @@ It is designed with:
 
 > All components (excluding printed parts) should cost between 30-40$
 
-![](https://github.com/pankleks/WasherOne/blob/main/Assembly/washer_one.jpg)
+![](https://github.com/pankleks/WasherOne/blob/main/Assembly/washer_one_wash.jpg)
 
 https://www.youtube.com/watch?v=Rgxfg9vZFL4&t
 
