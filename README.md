@@ -83,7 +83,9 @@ Essentially:
 ## Arduino code
 
 Code is available in `Arduino` folder. You should use platform.io to build and upload it.
+
 All parameters are defined in `Pin.h` file, by default all pins are compatible with PCB I designed.
+
 Code is relaively well commented, see these for more details.
 
 ## Fine tunning
