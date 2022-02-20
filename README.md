@@ -70,7 +70,7 @@ Schematic and Gerber files are available in `Electronics` folder.
 I'm sorry but I don't have time to write detailed step by step instruction. However, assembly should be fairly simple, please use photos in `Assembly` folder to guide you.
 
 Essentially:
-- Upload code to the Arduino
+- Upload code to the Arduino Nano
 - Assemble all electronics components on the PCB main board
 - Install power socket + on/off switch and RCA plug (you should glue RCA plug into the box as it's fairly loose)
 - Install tactile buttons, LED diodes and LED display (you may wish to use glue to secure them)
@@ -78,11 +78,13 @@ Essentially:
 - Screw in PCB
 - Connect all cables (for all 24V connections use ticker wires)
 - Install all magnets in the plates and rotor (pay attention so the magnets attract each other, you may also wish to glue in the magnets) 
+- NEMA17 motor screws in into box top cover. After installing magnets into motor plate, press-fit it onto motor shaft (should be flat with shaft top)
 
 ## Arduino code
 
 Code is available in `Arduino` folder. You should use platform.io to build and upload it.
 All parameters are defined in `Pin.h` file, by default all pins are compatible with PCB I designed.
+Code is relaively well commented, see these for more details.
 
 ## Fine tunning
 
