@@ -19,6 +19,8 @@ There are 3 buttons (from the left)
 - time set (pressing increase time of function)
 - start/stop
 
+> You should be able to work with ~ 10cm x 10cm (base) up to 15cm height objects.
+
 ### Washing
 
 Put Ikea container with the resin part on top of the box. Select wash mode -> set time -> start.
