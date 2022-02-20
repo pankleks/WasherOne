@@ -113,7 +113,7 @@ The default values work well for me, but may not for you.
 - 3 x 220 ohm resistors (for LED's)
 - 3 x 150 ohm 5W ceramic resistors (should be connected in parallel)
 - 1 x female and 2 x male RCA connectors
-- 4 x 20x10x2 neodymium magnets
+- 4 x 25x10x2 neodymium magnets
 - 2 x 10x2 (circle) neodymium magnet
 - 608 2RS bearing
 - 80x80 24V Fan
