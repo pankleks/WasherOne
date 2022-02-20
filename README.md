@@ -77,7 +77,10 @@ Essentially:
 - Screw in step-down converter (IMPORTANT -> use multimeter to set it for 5V)
 - Screw in PCB
 - Connect all cables (for all 24V connections use ticker wires)
-- Install all magnets in the plates and rotor (pay attention so the magnets attract each other, you may also wish to glue in the magnets) 
+- Install all magnets in the plates and rotor
+  - Magnets for motor plate and dry/cure plate press-fit into holes (you may wish to glue them)
+  - Magnets for rotor should be inserted from sides (do not glue them -> washing alcohol will dissolve it anyway)
+  - Pay attention so the magnets of motor plate and (rotor/dry-cure plate) attract each other
 - NEMA17 motor screws in into box top cover. After installing magnets into motor plate, press-fit it onto motor shaft (should be flat with shaft top)
 
 ## Arduino code
@@ -86,7 +89,7 @@ Code is available in `Arduino` folder. You should use platform.io to build and u
 
 All parameters are defined in `Pin.h` file, by default all pins are compatible with PCB I designed.
 
-Code is relaively well commented, see these for more details.
+Code is relatively well commented, see these for more details.
 
 ## Fine tunning
 
