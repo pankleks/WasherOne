@@ -14,8 +14,8 @@ https://www.youtube.com/watch?v=Rgxfg9vZFL4&t
 
 ## How does it work?
 
-There are 3 buttons (from left)
-- mode (wash - top LED, dry - middle LED, cure - bottom LED)
+There are 3 buttons (from the left)
+- mode (wash, dry, cure)
 - time set (pressing increase time of function)
 - start/stop
 
