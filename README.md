@@ -67,6 +67,8 @@ Arduino controls:
 I have designed PCB that you can order from (for example JLCPCB), however circuit is simple enough to assemble it without dedicated PCB.
 Schematic and Gerber files are available in `Electronics` folder.
 
+> In new PCB revision, 5V power input pins (as seen in pictures) are exchanged with 4 pairs of VIN/GND pins - their funciton is exacly same (VIN is 5V+). You can use more pins to split power if needed.
+
 ## Assembly
 
 I'm sorry but I don't have time to write detailed step by step instruction. However, assembly should be fairly simple, please use photos in `Assembly` folder to guide you.
